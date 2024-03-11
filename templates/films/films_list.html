@@ -1,0 +1,43 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Film List</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+<body>
+
+<div class="wrap">
+    <div class="container-fluid">
+        {% include 'films/header.html' %}
+
+        <div class="header">
+
+        </div>
+
+        <div class="film-list">
+            {% for i in film_key %}
+                <div class="card">
+                    <img src="{{i.image.url}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{i.title}}</h5>
+                        <a href="
+                        /film_detail/{{i.id}}" class="btn btn-primary">Подробнее</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+</div>
+
+        {% include 'films/footer.html' %}
+    </div>
+
+    <div class="footer">
+        <!-- Additional footer content goes here -->
+    </div>
+
+</body>
+</html>

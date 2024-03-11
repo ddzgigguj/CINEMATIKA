@@ -1,0 +1,48 @@
+{% load static %}
+{% include 'films/header.html' %}
+{% for i in post_ke %}
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Наши сотрудники</title>
+  <style>
+
+      h2 {
+          color: #333;
+      }
+
+      .employee {
+          width: 90%;
+          height: 230px;
+          display: flex;
+          align-items: center;
+          margin-bottom: 20px;
+          padding: 10px;
+          background-color: #fff;
+          border-radius: 5px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .employee img {
+          border-radius: 20%;
+          margin-right: 20px;
+      }
+
+      .employee-info {
+          flex: 1;
+      }
+      .employee-p{
+          font-size: 100px;
+      }
+  </style>
+  <div class="employee">
+      <img src="{{i.image.url}}" alt="" width="230" height="200">
+      <div class="employee-info">
+          <h1>{{ i.people }}</h1>
+          <p>{{i.description}}</p>
+      </div>
+  </div>
+
+{{i.created_at}}
+{% endfor %}
+{% include 'films/footer.html' %}

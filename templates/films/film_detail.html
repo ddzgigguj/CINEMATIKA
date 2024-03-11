@@ -1,0 +1,55 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ film.title }}</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <!-- Подключение Bootstrap через CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+<body>
+<style>
+    .poto {
+    /* Ваши стили для класса poto */
+    /* Например: */
+    margin-left: 750px;
+    margin-top: -460px;
+}
+
+</style>
+<div class="wrap">
+    <div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="ph">
+                <iframe src="{{ film_id.trailer }}" ></iframe>
+                <h3>TRAILER</h3>
+            </div>
+            <h4>{{film_id.title}}</h4>
+            <p>{{ film_id.description }}</p>
+        </div>
+        <div class="col-md-6">
+            <ul class="list-group">
+                <li class="list-group-item">Жанр: {{ film_id.genre }}</li>
+                <li class="list-group-item">Режиссер: {{ film_id.director }}</li>
+                <li class="list-group-item">Цена билета: {{ film_id.cost }}</li>
+                <li class="list-group-item">Дата выпуска: {{ film_id.year }}</li>
+                <li class="list-group-item">Главный актер: {{ film_id.acter }}</li>
+                <li class="list-group-item">отзывы: {{ film_id.otzv }}</li>
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
+<div class="poto">
+    <img src="{{film_id.image2.url}}" width="600px">
+</div>
+
+
+
+
+</body>
+</html>
